@@ -28,7 +28,6 @@ El software está basado en el entorno de desarrollo **Arduino IDE** y utiliza l
   - `ESP8266WiFi.h` - Para gestionar la conexión WiFi.
   - `WiFiClientSecure.h` - Para establecer conexiones seguras utilizando SSL/TLS.
   - `SimpleDHT.h` - Para trabajar con el sensor **DHT22**.
-  - `ESP8266WiFi.h` - (duplicada, puede eliminarse en la implementación final).
   - `ESPAsyncTCP.h` - Para gestionar comunicaciones TCP asincrónicas.
   - `ESPAsyncWebServer.h` - Para crear un servidor web asincrónico.
   - `ArduinoJson.h` - Para manejar objetos JSON en el proyecto.
@@ -39,9 +38,9 @@ El software está basado en el entorno de desarrollo **Arduino IDE** y utiliza l
 3. Asegúrate de tener instalada la placa **Wemos D1 (ESP8266)** en tu entorno de desarrollo.
 4. Configura tu red WiFi en el código (modifica el archivo `config.h` para poner tu SSID y contraseña).
 5. Conecta los sensores a los pines correspondientes de la placa:
-   - **DHT22**: [Pin específico].
-   - **ACS712**: [Pin específico].
-   - **FZ0430**: [Pin específico].
+   - **DHT22**: [Ver código].
+   - **ACS712**: [Ver código].
+   - **FZ0430**: [Ver código].
 6. Instala las librerías necesarias:
    - **ESP8266HTTPClient**
    - **ESP8266WiFi**
