@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) [año] [tu nombre o nombre de la organización]
+Copyright (c) 2024 appjavadev
 
 Se concede permiso, sin costo alguno, para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del software, y permitir a las personas a quienes se les proporcione el software hacerlo, sujeto a las siguientes condiciones:
 
