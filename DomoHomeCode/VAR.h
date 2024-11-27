@@ -28,16 +28,6 @@ String statusHUM="Zero";
 String statusVOL="Zero";
 String FUEL="NA";
 
-// Initialize Telegram BOT
-    #define BOTtoken "6154933901:AAEsXb4CjgZHBwnbj2QK_SJuYe03jfSajlM"
-    #define CHAT_ID "1249384084"
-
-// --------------- ThingSpeak Credentials -----------------
-    int channelID = 2021247;
-    String nameChannel = "EchoSolarVolts"; 
-    String writeApiKey = "IASHBGI45VO12WPJ";
-    String meHost = "api.thingspeak.com";
-
 void mePINSet(){
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(ch6, OUTPUT);

@@ -188,12 +188,6 @@ void InitServer(){
 
     });
 
-    serveR.on("/send", HTTP_GET, [](AsyncWebServerRequest *request){
-    Serial.println("Sending Telegram Message");
-    AsyncWebServerResponse *response = request->beginResponse(303);
-    response->addHeader("Location","/");
-    request->send(response);
-  });
 
 //------------------------------------------------
   serveR.begin();

@@ -1,12 +1,12 @@
-String file = "DIR_echoDOMO_v14NOV2023";
+String file = "DomoHome.ino";
 
-#include "meLIB.h"
-#include "meVAR.h"
-#include "meRED.h"
-#include "meSENS.h"
-#include "meWEB.h"
-#include "meSER.h"
-#include "meTHING.h"
+#include "LIB.h"
+#include "VAR.h"
+#include "RED.h"
+#include "SENS.h"
+#include "WEB.h"
+#include "SER.h"
+#include "THING.h"
 
 void setup() {    // ----- meSetup -------
   
