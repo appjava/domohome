@@ -38,9 +38,9 @@ El software está basado en el entorno de desarrollo **Arduino IDE** y utiliza l
 3. Asegúrate de tener instalada la placa **Wemos D1 (ESP8266)** en tu entorno de desarrollo.
 4. Configura tu red WiFi en el código (modifica el archivo `meRED.h` para poner tu SSID y contraseña).
 5. Conecta los sensores a los pines correspondientes de la placa:
-   - **DHT22**: [Ver código](DomoHomeCode/DomoHome).
-   - **ACS712**: [Ver código](DomoHomeCode/DomoHome).
-   - **FZ0430**: [Ver código](DomoHomeCode/DomoHome).
+   - **DHT22**: [Ver código](DomoHomeCode/DomoHome.ino).
+   - **ACS712**: [Ver código](DomoHomeCode/DomoHome.ino).
+   - **FZ0430**: [Ver código](DomoHomeCode/DomoHome.ino).
 6. Instala las librerías necesarias:
    - **ESP8266HTTPClient**
    - **ESP8266WiFi**
@@ -62,4 +62,4 @@ El software está basado en el entorno de desarrollo **Arduino IDE** y utiliza l
 Las contribuciones son bienvenidas. Si deseas mejorar el proyecto o añadir nuevas características, por favor realiza un fork y abre un pull request.
 
 ## Licencia
-Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE.md) para más detalles.
