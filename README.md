@@ -1,6 +1,5 @@
-![Banner de inicio](cover.png)
-
 # Proyecto Domótica - Control y Monitoreo de Hogar
+![Banner de inicio](cover.png)
 
 Este proyecto implementa un sistema de domótica utilizando una placa de desarrollo Wemos D1 (ESP8266) para controlar luces, sensar temperatura y humedad, medir corriente y voltaje, y monitorear el sistema de almacenamiento de energía. La interfaz de usuario está basada en web y permite controlar y visualizar el estado del sistema de forma local mediante una conexión WiFi.
 
