@@ -1,0 +1,5 @@
+title: Proyecto DomoHome
+description: Control y Monitoreo del Hogar
+baseurl: "" # No es necesario cambiar esto
+url: "https://appjava.github.io/domohome/" # El URL de tu GitHub Pages
+theme: jekyll-theme-slate # O cualquier otro tema disponible para GitHub Pages
