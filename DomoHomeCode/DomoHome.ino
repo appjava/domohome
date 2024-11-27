@@ -1,4 +1,4 @@
-String file = "DomoHomeSafe_v25NOV2024";
+String file = "DIR_echoDOMO_v14NOV2023";
 
 #include "meLIB.h"
 #include "meVAR.h"
@@ -24,12 +24,16 @@ void setup() {    // ----- meSetup -------
 }
 
 void loop() {   //---------------- meLoop ----------------
-
+  
+  Serial.println("o---------------- SensorDH11 --------------------o");
+  readDHT11();
+  delay(100);
   delay(500);
-
+  Serial.println("o------------------------------------------------o");
+  Serial.println("");
   int tim = 0;
   while (tim < 12) {
-    Serial.println("|----------------- Status SolarTable ----------------|");
+    Serial.println("|----------------- StatusStorage ----------------|");
     Serial.print(modo);
     Serial.print(" // IP address: ");
     Serial.println(WiFi.localIP());
@@ -46,8 +50,12 @@ void loop() {   //---------------- meLoop ----------------
     Serial.println("");
     delay(500);
   }
-
+  Serial.println("o---------------- SensorDH11 --------------------o");
+  readDHT11();
+  delay(100);
   delay(500);
+  Serial.println("o------------------------------------------------o");
+  Serial.println("");
   
   if (WiFi.status() != WL_CONNECTED){
     initWiFi();
@@ -59,7 +67,7 @@ void loop() {   //---------------- meLoop ----------------
   
   if (timeOutS==5){
   Serial.println("|--------------------- Update Channel ThingSpeak ---------------------|"); 
-    //thingS();
+    thingS();
   Serial.println("|---------------------------------------------------------------------|");
   Serial.println("");
     timeOutS=0;

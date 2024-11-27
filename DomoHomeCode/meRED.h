@@ -6,13 +6,25 @@ void initWiFi() {   // ----- WifiMode -------
   Serial.println("");
   #define WIFI_SSID "SOFI_plus"
   #define WIFI_PASS "sofi0322"
-  //#define WIFI_SSID "SOFI"
-  //#define WIFI_PASS "sofi0322"
+  //#define WIFI_SSID "DIR-ECHO"
+  //#define WIFI_PASS "home1423"
+
+  /*#define WIFI_SSID "EchoHome"
+  #define WIFI_PASS "14de1423fa"*/
 
   // Set your Static IP address
-  IPAddress local_IP(192, 168, 0, 131);
+  IPAddress local_IP(192, 168, 0, 130);
   IPAddress gateway(192, 168, 0, 1);
   IPAddress subnet(255, 255, 255, 0);
+
+  /*IPAddress local_IP(192, 168, 1, 131);
+  IPAddress gateway(192, 168, 1, 1);
+  IPAddress subnet(255, 255, 255, 0);*/
+
+  /*// Set your Static IP address
+  IPAddress local_IP(192, 168, 100, 130);
+  IPAddress gateway(192, 168, 100, 1);
+  IPAddress subnet(255, 255, 255, 0);*/
   
   //WiFi.mode(WIFI_STA);
   WiFi.config(local_IP, gateway, subnet);
@@ -60,8 +72,8 @@ void initSTA() {    // ----- StationMode -------
   
   //--------AccessPoint---
   #ifndef APSSID
-  #define APSSID "TableSolar"
-  #define APPSK  "solar2024"
+  #define APSSID "EchoDomoticCenter"
+  #define APPSK  "14de1423fa"
   #endif
   //-----------------------
 
@@ -80,5 +92,5 @@ void initSTA() {    // ----- StationMode -------
   Serial.println("OPERANDO EN MODO ESTACIÓN");
 
   digitalWrite(LED_BUILTIN, HIGH);
-
+  //digitalWrite(pilo, HIGH);
 }

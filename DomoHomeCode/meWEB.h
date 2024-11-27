@@ -3,7 +3,7 @@
 const char index_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML><html>
   <head>
-    <title>SOLAR TABLE</title>
+    <title>EchoDomotic Switch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv='refresh' content='12'>
     <style>
@@ -14,7 +14,7 @@ const char index_html[] PROGMEM = R"rawliteral(
         margin:0px auto; 
         padding-top: 12px;
         color: #9c359a;
-        background-color: #121212;
+        background-color: white;
       }
       p {
         margin: 0px;
@@ -64,7 +64,7 @@ const char index_html[] PROGMEM = R"rawliteral(
           margin: 0px;
       }
       #footer{
-          border-top: none 3px #eb53e2;
+          border-top: dotted 3px #eb53e2;
           padding: 0px;
           margin: 0px;
       }
@@ -104,7 +104,12 @@ const char index_html[] PROGMEM = R"rawliteral(
   </script>
   <body>
     <div id="header">
-    <h2>SolarTable HomeSafe</h2>
+    <h2>ECHOHOME DOMOTIC</h2>
+    </div>
+    <div id="sensors">
+    <p><strong>Sensors</strong><strong><span id="statesen"></span></strong></p>
+    <p><a href="temp"><button class="button">Temp: %STATETEMP% </button></a>
+       <a href="hum"><button class="button">Hum: %STATEHUM% </button></a></p>
     </div>
     <div id="sensors">
     <p><span>BatteryStatus: </span><strong><span id="statebat">%STATEBAT%</span></strong><br>
@@ -114,19 +119,24 @@ const char index_html[] PROGMEM = R"rawliteral(
     <br><br>
     <div id="all">
     <div id="ch">
-    <p><strong>Bord Led</strong> : <strong> <span id="statech1">%STATECH1%</span> </strong></p>
+    <p><strong>BALCONY</strong> : <strong> <span id="statech1">%STATECH1%</span> </strong></p>
     <p><a href="onch1"><button class="button">ON</button></a>
         <a href="offch1"><button class="button">OFF</button></a></p>
     </div>
     <div id="ch">
-    <p><strong>Charger</strong> : <strong> <span id="statech2"> %STATECH2% </span> </strong></p>
+    <p><strong>ROOM</strong> : <strong> <span id="statech2"> %STATECH2% </span> </strong></p>
     <p><a href="onch2"><button class="button">ON</button></a>
         <a href="offch2"><button class="button">OFF</button></a></p>
     </div>
     <div id="ch">
-    <p><strong>Loads</strong> : <strong> <span id="statech3"> %STATECH3% </span> </strong></p>
+    <p><strong>EXTERIOR</strong> : <strong> <span id="statech3"> %STATECH3% </span> </strong></p>
     <p><a href="onch3"><button class="button">ON</button></a>
         <a href="offch3"><button class="button">OFF</button></a></p>
+    </div>
+    <div id="ch">
+    <p><strong>LIVING</strong> : <strong> <span id="statech4"> %STATECH4% </span> </strong></p>
+    <p><a href="onch4"><button class="button">ON</button></a>
+        <a href="offch4"><button class="button">OFF</button></a></p>
     </div>
     </div>
     <br>
@@ -134,6 +144,19 @@ const char index_html[] PROGMEM = R"rawliteral(
     <p><strong>ALL LIGHT CHANNELS</strong><strong><span id="statechall"></span></strong></p>
     <p><a href="onAll"><button class="button">ON ALL</button></a>
         <a href="offAll"><button class="button">OFF ALL</button></a></p>
+    </div>
+    <br>
+    <div id="all">
+    <div id="extra">
+    <p><strong>BACKUP</strong> - Status: <strong> <span id="statech5"> %STATECH5% </span> </strong></p>
+    <p><a href="onch5"><button class="button">ON</button></a>
+        <a href="offch5"><button class="button">OFF</button></a></p>
+    </div>
+    <div id="extra">
+    <p><strong>INVERTER</strong> - Status: <strong> <span id="statech6"> %STATECH6% </span> </strong></p>
+    <p><a href="onch6"><button class="button">ON</button></a>
+        <a href="offch6"><button class="button">OFF</button></a></p>
+    </div>
     </div>
     <br><br>
     <div id="footer">
@@ -157,6 +180,15 @@ String processor(const String & var){
   else if(var == "STATECH3"){
     return statusCh3;
   }
+  else if(var == "STATECH4"){
+    return statusCh4;
+  }
+  else if(var == "STATECH5"){
+    return statusCh5;
+  }
+  else if(var == "STATECH6"){
+    return statusCh6;
+  }
   else if(var == "STATEBAT"){
     return statusBAT;
   }
@@ -165,6 +197,12 @@ String processor(const String & var){
   }
   else if(var == "FUEL"){
     return FUEL;
+  }
+  else if(var == "STATETEMP"){
+    return statusTEMP;
+  }
+  else if(var == "STATEHUM"){
+    return statusHUM;
   }
   return String();
 }

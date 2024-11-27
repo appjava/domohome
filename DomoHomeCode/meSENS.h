@@ -3,11 +3,11 @@
 void sensorVolt(){    // ----- ReadSensorVolts -------
   int Vsensor = A0;
   pinMode(Vsensor, INPUT);
-  float correctionfactor = 6; //7.89 
+  float correctionfactor = 7.89; 
   float vout = 0.0; 
   float vin = 0.0; 
-  float R1 = 50000;  // 30000  
-  float R2 = 10000; //  5000
+  float R1 = 30000;  //   
+  float R2 = 5000; //  
   int value = 0;
   
   float xMin=11.7;
@@ -21,19 +21,15 @@ void sensorVolt(){    // ----- ReadSensorVolts -------
   String fuel="";
   float Tvoltage=0.0;
   float Vvalue=0.0,Rvalue=0.0;
-  float RatioFactor=6;  // 7.17
+  float RatioFactor=7.17;
   for(unsigned int i=0;i<95;i++){
     Vvalue=Vvalue+analogRead(Vsensor);         //Read analog Voltage
     delay(5);                              //ADC stable
   }
   Vvalue=(float)Vvalue/95.0;            //Find average of 10 values
-  Rvalue=(float)(Vvalue/1024.0)*3.06;      //Convert Voltage in 5v factor
+  Rvalue=(float)(Vvalue/1024.0)*3.09;      //Convert Voltage in 5v factor
   Tvoltage=Rvalue*RatioFactor;          //Find original voltage by multiplying with factor
   
-  if(Tvoltage<0.5){
-    Tvoltage=0;
-  };
-
   Serial.print("SYSTEM VOLTAGE = "); 
   Serial.println(Tvoltage);
   porcent=(pendiente*Tvoltage)+(varB);
@@ -62,8 +58,8 @@ void sensorVolt(){    // ----- ReadSensorVolts -------
   
 //---------------- Voltage Control ----------------
   if(Tvoltage < 11.7){
-    digitalWrite(ch3, HIGH);
-    statusCh3="CUT OFF";
+    digitalWrite(ch6, HIGH);
+    statusCh6="CUT OFF";
     statusBAT="AUTO CUT OFF";
   }
   else if(Tvoltage>11.7 and Tvoltage<11.8){
@@ -105,16 +101,40 @@ void sensorVolt(){    // ----- ReadSensorVolts -------
   else if(Tvoltage>13.2 and Tvoltage<13.8){
     statusBAT="HARD_CHARGE";
   }
-  else if(Tvoltage>13.8 and Tvoltage<14.7){
+  else if(Tvoltage>13.8 and Tvoltage<14.2){
     statusBAT="MORE LOAD SUPPORTED!";
   }
-  else if(Tvoltage>14.7){
+  else if(Tvoltage>14.2){
     statusBAT="OVER_CHARGE!!!";
-    digitalWrite(ch2, LOW);
-    statusCh2="Charge OFF";
+    digitalWrite(ch5, LOW);
+    statusCh5="ON_Auto";
   }
   delay(100);
   
+//--------------------- FlowCH5 --------------------
+  if (statusCh5=="ON_Manual"){
+    statusCh5="ON_Manual";
+    delay(100);
+  }
+  else if(statusCh5=="ON_Auto"){
+    if (Tvoltage<13.2){
+      digitalWrite(ch5, HIGH);
+      statusCh5="OFF";
+      delay(100);
+    }
+    else{
+      statusCh5="ON_Auto";
+      delay(100);
+    }
+  }
+  else if(statusCh5=="OFF"){
+    statusCh5="OFF";
+    delay(100);
+  }
+  else{
+    statusCh5="off";
+    delay(100);
+  }
 }
 
 void readDHT11() {    // ----- Read Sensor DH11-------
