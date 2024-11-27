@@ -40,7 +40,7 @@ El software está basado en el entorno de desarrollo **Arduino IDE** y utiliza l
 5. Conecta los sensores a los pines correspondientes de la placa:
    - **DHT22**: [Ver código](DomoHomeCode/DomoHome.ino).
    - **ACS712**: [Ver código](DomoHomeCode/DomoHome.ino).
-   - **FZ0430**: [Ver código](DomoHomeCode/DomoHome.ino).
+   - **FZ0430**: [Ver código](DomoHomeCode/SENS.h).
 6. Instala las librerías necesarias:
    - **ESP8266HTTPClient**
    - **ESP8266WiFi**
