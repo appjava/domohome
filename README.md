@@ -36,7 +36,7 @@ El software está basado en el entorno de desarrollo **Arduino IDE** y utiliza l
 1. Clona este repositorio.
 2. Abre el proyecto en el **Arduino IDE**.
 3. Asegúrate de tener instalada la placa **Wemos D1 (ESP8266)** en tu entorno de desarrollo.
-4. Configura tu red WiFi en el código (modifica el archivo `config.h` para poner tu SSID y contraseña).
+4. Configura tu red WiFi en el código (modifica el archivo `meRED.h` para poner tu SSID y contraseña).
 5. Conecta los sensores a los pines correspondientes de la placa:
    - **DHT22**: [Ver código].
    - **ACS712**: [Ver código].
