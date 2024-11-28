@@ -120,3 +120,21 @@ Si tienes alguna sugerencia, ¡no dudes en contribuir!
 
 > "La gente que está lo suficientemente loca como para pensar que puede cambiar el mundo, es la que lo hace."  
 > — **Steve Jobs**
+>
+
+---
+
+# Proyecto de Domótica con ESP8266
+
+![Build Status](https://img.shields.io/travis/appjava/domohome.svg)
+![Version](https://img.shields.io/github/v/release/appjava/domohomo.svg)
+
+## 🚀 Estado del Proyecto
+
+Este proyecto está en fase **beta**. Actualmente estamos trabajando en las siguientes mejoras:
+- Mejorar la interfaz web.
+- Optimizar la eficiencia energética.
+- Integrar nuevos sensores y dispositivos.
+
+Si tienes alguna sugerencia, ¡no dudes en contribuir!
+
