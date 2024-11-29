@@ -1,6 +1,6 @@
 # Proyecto de Domótica
 
-![Banner de inicio](cover.png)
+<!--![Banner de inicio](cover.png)-->
 
 **Descripción**: Este proyecto utiliza una **placa Wemos D1** con **ESP8266** para controlar luces, medir temperatura y humedad, y monitorear energía. La interfaz de usuario es accesible localmente a través de una página web usando WiFi.
 
